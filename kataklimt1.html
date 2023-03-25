@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>KatakLimit|Gridbox</title>
+        <link rel="icon" type="images/x-icon" href="IMG/Logo1.jpeg" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />  <!--CDN inclusion for favicon provider-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,300;1,400&display=swap" rel="stylesheet">
+
+
+
+
+        <style>
+            *{
+                box-sizing: border-box;
+                font-family: 'Fira Sans', sans-serif;
+            }
+
+            img
+            {
+                max-width: 100%;
+            }
+            body
+            { 
+                background-color: rgba(14, 14, 15, 0.745);
+            }
+            #layout
+            {
+                width:90%;
+                margin: auto;
+            }
+            .Grid,.headergrid,.nav, .bannergrid, .welcomegrid,.Foliogrid, .foliocolI,.foliocolII,.foliocolIII,.foliocolIV,.footer,.bloggrid,.aboutgrid,.abtcolgrid,.heartlist,.description, .Photoshootgrid,.grpphotogrid
+            {
+                display:grid;
+            }
+
+            .headergrid, .footer
+            {
+                
+                grid-template-columns: 30% 70%;
+                background-color:white;
+                padding:10px 50px 0px 50px;
+                justify-content: right;
+            }
+            .bannergrid,.Foliogrid,.bloggrid,.footer
+            {
+                padding:20px 50px 20px 50px;
+            }
+            .bannerimg
+            {
+                padding: 20px 100px;
+                justify-content: center;
+            }
+            .welcomegrid
+            {
+                padding: 0px 100px 10px 100px;
+            }
+            .nav
+            {                
+                grid-template-columns: auto auto auto auto auto;
+                gap: 10px;
+                justify-content:right;
+                               
+            }
+            .nav >div
+            {
+                padding:20px;
+                text-align:center;
+                align-items: center;
+            }
+            #circle
+             {
+                align-items: center;
+                width: 75px;
+                height: 75px;
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                border-radius: 30px;
+                background: crimson;
+                color:aliceblue;
+                justify-content: center;
+            }
+            .bannergrid
+            {
+                background-color: rgba(0, 0, 0, 0.756);
+                color: aliceblue;
+                row-gap: 30px;
+            }
+            .welcomegrid
+            {
+                grid-template-columns: 30% 70%;                
+                          
+            }
+
+            .welcome
+            {
+                text-align: center; 
+                font-size: xx-large;                
+            }
+            .welcome::first-letter, span
+            {
+                color:crimson;
+            }
+            #wlcmtxt
+            {
+                border-style: none none none groove;
+                border-color:gray ;
+                padding-left: 20px;
+                font-size: small;
+                vertical-align: bottom;
+            }
+            .Foliogrid
+            {
+                grid-template-columns: 25% 25% 25% 25%;
+                background-color: black;
+                
+            }
+            .colgrey,#colgrey
+            {
+                color: rgb(164, 155, 155);
+            }
+                 
+            .coltxt
+            {                
+                font-size: large;
+            }
+            .colprgh
+           {
+                font-size:small;
+           }
+           button
+           {
+             background-color:crimson;
+             color: aliceblue;
+             height: 40px;
+             width: 100px;
+           }
+           .foliocolI,.foliocolII,.foliocolIII,.foliocolIV
+           {
+            row-gap: 20px;
+           }
+           
+           .bloggrid
+           {
+            grid-template-columns: 50% 50%;
+            column-gap: 50px;           
+           }
+           .aboutgrid
+           {
+            row-gap: 10px;
+           }
+           .abtcolgrid
+           {
+             grid-template-columns: 50% 50%;
+             
+           }
+           .description
+           {
+            padding-top: 10px;
+           }
+           
+           .heartlist
+           {
+            grid-template-columns: 50% 50%;
+           }
+            .heartlist div
+           {
+             
+             color:crimson;
+             border-style: groove none none none;             
+             border-color: gray;
+           }
+
+           ul
+           {
+            color:crimson;    
+            list-style-type:disc;
+           }        
+           ul li
+           {
+            padding: 10px;
+           }
+           .grpphotogrid
+           {
+            grid-template-columns: repeat(4,1fr);
+           }
+           
+           .footer >div >i
+            {
+                width: 25px;
+                height:25px;
+                -webkit-border-radius: 30px;
+                -moz-border-radius: 30px;
+                border-radius: 20px;
+                background: crimson;
+                justify-content: center;
+                text-align: center;
+                color:aliceblue;
+            }    
+            @media only screen and (max-width: 576px)
+             {
+                .headergrid,.welcomegrid,.bloggrid,.abtcolgrid,.footer
+                {
+                    grid-template-columns: repeat(1,1fr);
+                    text-align: center;
+                }
+                #wlcmtxt
+                {
+                    border-style: groove none none none ;
+                    border-color:gray ;
+                    padding: 20px;
+                    text-align:left;
+                }
+                .Foliogrid,.grpphotogrid
+                {
+                    grid-template-columns: repeat(2,1fr);
+                    text-align: center;
+                    padding-top: 20px;
+                }
+                
+             }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="layout">
+            <div class="Grid" >
+                <div class="headergrid">
+                    <div class="topic">
+                        <h1><strong style="color: crimson;">K</strong>ata<strong style="color: crimson;">K</strong>limt <br>Photography</h1>
+                    </div>
+                    <div  class="nav">
+                        <div id="circle">About</div>
+                        <div >Services</div>
+                        <div>Folio</div>
+                        <div>Blog</div>
+                        <div>Contact</div>
+                    </div>
+                </div>
+                <div class="bannergrid" >
+                    <div class="bannerimg">
+                        <img src="images/kataklimts.png" alt=".....">
+                    </div>   
+                    <div class="welcomegrid" >
+                        <div class="welcome">
+                            Welcome&excl;
+                        </div>     
+                        <div id="wlcmtxt" class="colgrey">
+                            <span> Click here</span> &nbsp;for Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem rem ullam odit? Tenetur exercitationem 
+                            nam aut possimus obcaecati tempore laudantium voluptas! Non quisquam quae quaerat asperiores fugit reprehenderit consectetur labore.
+                        </div>           
+                    </div>
+                <div>
+                <div class="Foliogrid">
+                    <div class="foliocolI">
+                        <div class="coltxt">
+                            Fashion
+                        </div>
+                        <div >
+                            <img src="images/kataklimts (1).png"alt="Fashion">
+                        </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>At vero eos et accusamus et iusto</span> <br>
+                            odio dignissimos ducimus qui blanditiis praesentium
+                        </div>
+                        <div >
+                            <button>Read More</button>
+                        </div>
+                    </div>
+                
+                    <div class="foliocolII">
+                        <div class="coltxt">
+                            Nature
+                        </div>
+                        <div >
+                            <img src="images/kataklimts (2).png" alt="Nature">
+                        </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>deleniti atque corrupti quos</span> <br>
+                            odio dignissimos ducimus qui blanditiis praesentium
+                        </div>
+                        <div >
+                            <button>Read More</button>
+                        </div>
+                    </div>
+                    <div class="foliocolIII">
+                        <div class="coltxt" >
+                            Love Story
+                        </div>
+                        <div >
+                            <img src="images/kataklimts (3).png" alt="Love Story">
+                    </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>Similique sunt in culpa qui officia</span> <br>
+                            odio dignissimos ducimus qui blanditiis praesentium
+                        </div>
+                        <div >
+                            <button>Read More</button>
+                        </div>
+                    </div>
+                    <div class="foliocolIV">
+                        <div class="coltxt">
+                            Fine Art
+                        </div>
+                        <div >
+                            <img src="images/kataklimts (4).png" alt="FineArt">
+                        </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>At vero eos et accusamus et iusto</span> <br>
+                            odio dignissimos ducimus qui blanditiis praesentium
+                        </div>                
+                        <div >
+                            <button>Read More</button>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="bloggrid">
+                    <div class="aboutgrid">
+                        <div class="coltxt">
+                            Shortly About Me
+                        </div>
+                        <div class="abtcolgrid">
+                            <div> <img src="images/kataklimt (5).png" alt=""></div>
+                            <div class="description">
+                                <div> 
+                                    Sed ut perspiciatis unde omnis iste natus error sit
+                                    voluptatem
+                                </div>
+                                <div class="colgrey">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Facilis minima quis at illum reprehenderit a nulla.
+                                </div>
+                                <div class="heartlist">
+                                    <div>
+                                        <ul>
+                                            <li>Campaigns</li>
+                                            <li>Portraits</li>
+                                            <li>Fashion</li>
+                                            <li>Fine Art</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>Advertising</li>
+                                            <li>Lifestyle</li>
+                                            <li>Love Story</li>
+                                            <li>Landscapes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="Photoshootgrid">
+                        <div class="coltxt">
+                            Latest Photoshoots
+                        </div>
+                        <div class="grpphotogrid">
+                            <div><img src="images/kataklimt (6).png" alt=""></div>
+                            <div><img src="images/kataklimt (7).png" alt=""></div>
+                            <div><img src="images/kataklimt (8).png" alt=""></div>
+                            <div><img src="images/kataklimt (9).png" alt=""></div>
+                        
+                            <div><img src="images/kataklimt (10).png" alt=""></div>
+                            <div><img src="images/kataklimt (11).png" alt=""></div>
+                            <div><img src="images/kataklimt (12).png" alt=""></div>
+                            <div><img src="images/kataklimt (13).png" alt=""></div>
+                        
+                            <div><img src="images/kataklimt (14).png" alt=""></div>
+                            <div><img src="images/kataklimt (15).png" alt=""></div>
+                            <div><img src="images/kataklimt (16).png" alt=""></div>
+                            <div><img src="images/kataklimt (17).png" alt=""></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="footer" style="padding: 5px 50px; color:black">
+                    <div>&copy; CopyRight2023</div>
+                    <div style="text-align:right; padding-right: 50px;">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i> 
+                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>
